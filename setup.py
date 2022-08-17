@@ -8,7 +8,7 @@ requirements = ['absl-py>=1.2.0', 'asttokens>=2.0.8', 'backcall>=0.2.0', 'cachet
 
 setuptools.setup(
     name="yolov7_package",
-    version="0.0.4",
+    version="0.0.5",
     author="Maxim Volkovskiy",
     author_email="maxwolf8852@gmail.com",
     description="Bindings for yolov7 in one class",

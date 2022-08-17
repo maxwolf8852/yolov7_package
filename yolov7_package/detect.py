@@ -34,7 +34,7 @@ class Yolov7Detector:
         if img_size is None:
             img_size = [640, 640]
         if weights is None:
-            weights = ['model_weights/yolov7.pt']
+            weights = ['yolov7_package/model_weights/yolov7.pt']
 
         self.agnostic_nms = agnostic_nms
         self.augment = augment
@@ -57,7 +57,7 @@ class Yolov7Detector:
         self.names = self.model.module.names if hasattr(self.model, 'module') else self.model.names
         self.model.eval()
 
-    def detect(self, x) -> (list[int], list[list[float]], list[float]):
+    def detect(self, x) -> (list, list, list):
         """
         :param x: list of numpy images (e.g. after cv2.imread) or numpy image
         :return: []classes, []boxes, []confidences
@@ -115,7 +115,7 @@ class Yolov7Detector:
 
             return classes, boxes, confs
 
-    def draw_on_image(self, img, boxes: list[list[float]], scores: list[float], class_ids: list[int], thickness=1):
+    def draw_on_image(self, img, boxes: list, scores: list, class_ids: list, thickness=1):
         for i, box in enumerate(boxes):
             name = self.names[class_ids[i]]
             color = conf2color(scores[i])

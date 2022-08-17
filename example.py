@@ -1,4 +1,4 @@
-from detect import Yolov7Detector
+from yolov7_package import Yolov7Detector
 import cv2
 
 if __name__ == '__main__':
