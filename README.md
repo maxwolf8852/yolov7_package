@@ -6,18 +6,18 @@ Bindings for yolov7 project (https://github.com/WongKinYiu/yolov7)
 
 Example of usage:
 ```Python
-from detect import Yolov7Detector
+from yolov7_package import Yolov7Detector
 import cv2
 
 if __name__ == '__main__':
     img = cv2.imread('img.jpg')
-    #img = cv2.resize(img, [640, 640])
-    det = Yolov7Detector()
+    det = Yolov7Detector(traced=False)
     classes, boxes, scores = det.detect(img)
-    print(classes, boxes, scores)
     img = det.draw_on_image(img, boxes[0], scores[0], classes[0])
-    print(img.shape)
 
     cv2.imshow("image", img)
     cv2.waitKey()
 ```
+
+You can use traced=True option to download and infer traced FP16 version of yolov7 model!
+PYPI link: https://pypi.org/project/yolov7-package/

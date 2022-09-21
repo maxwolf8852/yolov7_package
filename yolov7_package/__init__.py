@@ -1,1 +1,1 @@
-from yolov7_package.detect import Yolov7Detector
+from yolov7_package.model_utils import Yolov7Detector
