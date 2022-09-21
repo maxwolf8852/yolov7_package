@@ -19,5 +19,6 @@ if __name__ == '__main__':
     cv2.waitKey()
 ```
 
-You can use traced=True option to download and infer traced FP16 version of yolov7 model!
+You can use <b>traced=True</b> option to download and infer traced FP16 version of yolov7 model! 
+
 PYPI link: https://pypi.org/project/yolov7-package/
