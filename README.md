@@ -1,3 +1,7 @@
+![GitHub](https://img.shields.io/github/license/maxwolf8852/yolov7_package?style=plastic)
+[![PyPI version](https://badge.fury.io/py/yolov7_package.svg)](https://badge.fury.io/py/yolov7_package)
+![PyPI - Downloads](https://img.shields.io/pypi/dm/yolov7_package?style=plastic)
+
 <h3 align="center">
   WongKinYiu/yolov7 as independent package
 </h3>
