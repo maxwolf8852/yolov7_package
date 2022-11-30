@@ -3,7 +3,6 @@
 import numpy as np
 import torch
 import yaml
-from scipy.cluster.vq import kmeans
 from tqdm import tqdm
 
 from .general import colorstr
@@ -59,7 +58,7 @@ def check_anchors(dataset, model, thr=4.0, imgsz=640):
     print('')  # newline
 
 
-def kmean_anchors(path='./data/coco.yaml', n=9, img_size=640, thr=4.0, gen=1000, verbose=True):
+'''def kmean_anchors(path='./data/coco.yaml', n=9, img_size=640, thr=4.0, gen=1000, verbose=True):
     """ Creates kmeans-evolved anchors from training dataset
 
         Arguments:
@@ -89,17 +88,6 @@ def kmean_anchors(path='./data/coco.yaml', n=9, img_size=640, thr=4.0, gen=1000,
         _, best = metric(torch.tensor(k, dtype=torch.float32), wh)
         return (best * (best > thr).float()).mean()  # fitness
 
-    def print_results(k):
-        k = k[np.argsort(k.prod(1))]  # sort small to large
-        x, best = metric(k, wh0)
-        bpr, aat = (best > thr).float().mean(), (x > thr).float().mean() * n  # best possible recall, anch > thr
-        print(f'{prefix}thr={thr:.2f}: {bpr:.4f} best possible recall, {aat:.2f} anchors past thr')
-        print(f'{prefix}n={n}, img_size={img_size}, metric_all={x.mean():.3f}/{best.mean():.3f}-mean/best, '
-              f'past_thr={x[x > thr].mean():.3f}-mean: ', end='')
-        for i, x in enumerate(k):
-            print('%i,%i' % (round(x[0]), round(x[1])), end=',  ' if i < len(k) - 1 else '\n')  # use in *.cfg
-        return k
-
     if isinstance(path, str):  # *.yaml file
         with open(path) as f:
             data_dict = yaml.load(f, Loader=yaml.SafeLoader)  # model dict
@@ -127,7 +115,6 @@ def kmean_anchors(path='./data/coco.yaml', n=9, img_size=640, thr=4.0, gen=1000,
     k *= s
     wh = torch.tensor(wh, dtype=torch.float32)  # filtered
     wh0 = torch.tensor(wh0, dtype=torch.float32)  # unfiltered
-    k = print_results(k)
 
     # Plot
     # k, d = [None] * 20, [None] * 20
@@ -157,4 +144,4 @@ def kmean_anchors(path='./data/coco.yaml', n=9, img_size=640, thr=4.0, gen=1000,
             if verbose:
                 print_results(k)
 
-    return print_results(k)
+    return print_results(k)'''

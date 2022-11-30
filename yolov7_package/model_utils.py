@@ -196,11 +196,6 @@ class Yolov7Detector:
 
             y = torch.stack(y)
             pred = self.model(y, )[0] # augment=self.augment
-            #print(pred.shape)
-            #if self.traced:
-            #    pred = pred[0].unsqueeze(0)
-
-            #print(pred.shape)
 
             pred = non_max_suppression(pred, self.conf_thres, self.iou_thres, classes=None,
                                        agnostic=self.agnostic_nms)

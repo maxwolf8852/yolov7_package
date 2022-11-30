@@ -12,7 +12,7 @@ def test_train():  # not implemented now
 
 def test(img_path, traced):
     img = cv2.imread(img_path)
-    det = Yolov7Detector(traced=traced)
+    det = Yolov7Detector(traced=traced, iou_thres=0.3)
 
     _ = det.detect(img)
     _ = det.detect(img)
