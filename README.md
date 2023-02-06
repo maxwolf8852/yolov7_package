@@ -2,6 +2,8 @@
 [![PyPI version](https://badge.fury.io/py/yolov7_package.svg)](https://badge.fury.io/py/yolov7_package)
 ![PyPI - Downloads](https://img.shields.io/pypi/dm/yolov7_package?style=plastic)
 
+# This package is deprecated. Now use ![DetExecutor](https://github.com/maxwolf8852/DetExecutor)
+
 <h3 align="center">
   WongKinYiu/yolov7 as independent package
 </h3>
