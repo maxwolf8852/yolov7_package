@@ -20,7 +20,7 @@ def gsutil_getsize(url=''):
 def attempt_download(file):
     # Attempt file download if does not exist
     file_name = file
-    file = Path(str(file).strip().replace("'", '').lower())
+    file = Path(str(file).strip().replace("'", ''))
 
     if not file.exists():
         wget.download(f'https://github.com/WongKinYiu/yolov7/releases/download/v0.1/{file.name}', out=str(file.parent))
