@@ -1,14 +1,21 @@
-import os
 import setuptools
 
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
-requirements = ['pyyaml', 'opencv-python', 'torch', 'torchvision', 'requests', 'wget', 'tqdm']
+requirements = [
+    "pyyaml",
+    "opencv-python",
+    "torch",
+    "torchvision",
+    "requests",
+    "wget",
+    "tqdm",
+]
 
 setuptools.setup(
     name="yolov7_package",
-    version="0.0.12",
+    version="0.0.13",
     author="Maxim Volkovskiy",
     author_email="maxwolf8852@gmail.com",
     description="Bindings for yolov7 in one class",
@@ -22,5 +29,5 @@ setuptools.setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    python_requires='>=3.6',
+    python_requires=">=3.6",
 )

@@ -1,5 +1,5 @@
 from yolov7_package import Yolov7Detector
-import cv2, time, os
+import cv2, time
 
 
 def test_train():  # not implemented now
@@ -18,16 +18,16 @@ def test(img_path, traced):
     _ = det.detect(img)
     start = time.time()
     classes, boxes, scores = det.detect([img, img.copy()])
-    print(f'Time: {time.time() - start}')
+    print(f"Time: {time.time() - start}")
     img = det.draw_on_image(img, boxes[0], scores[0], classes[0])
 
     cv2.imshow("image", img)
     cv2.waitKey()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # test detection
-    test('img.jpg', False)
+    test("img.jpg", False)
 
     # test traced model
-    test('img.jpg', True)
+    test("img.jpg", True)
